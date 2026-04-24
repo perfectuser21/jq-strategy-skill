@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jq-strategy · 聚宽策略生成器 Claude Code Skill</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}
+body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;max-width:760px;margin:0 auto;padding:48px 24px;color:#1a1a1a;background:#fafafa}
+h1{margin:0 0 8px;font-size:32px;letter-spacing:-0.5px}
+.sub{color:#666;margin-bottom:32px;font-size:16px}
+.box{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:18px;margin:16px 0}
+code{font:13px/1.5 "SF Mono",Menlo,Consolas,monospace;background:#f0f0f0;padding:2px 6px;border-radius:4px}
+pre{background:#1e1e1e;color:#e4e4e4;padding:14px 16px;border-radius:6px;overflow-x:auto;margin:0;font:13px/1.5 "SF Mono",Menlo,Consolas,monospace}
+pre code{background:none;padding:0;color:inherit}
+.btn{display:inline-block;background:#0969da;color:#fff;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:600;margin:6px 8px 6px 0;font-size:14px}
+.btn:hover{background:#0550a0}
+.btn.sec{background:#57606a}
+.btn.sec:hover{background:#424a53}
+ul{padding-left:22px}
+li{margin:6px 0}
+h3{margin-top:32px;font-size:18px}
+a{color:#0969da;text-decoration:none}
+a:hover{text-decoration:underline}
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid #e1e4e8;color:#8b949e;font-size:13px}
+</style>
+</head>
+<body>
+
+<h1>jq-strategy</h1>
+<p class="sub">聚宽（JoinQuant）量化策略代码生成器 · Claude Code Skill</p>
+
+<p>用自然语言描述策略，Claude 自动生成可直接粘贴到 <a href="https://www.joinquant.com/" target="_blank">joinquant.com</a> 回测的 Python 代码。</p>
+
+<h3>🚀 一键安装</h3>
+
+<pre><code>curl -sL https://perfectuser21.github.io/jq-strategy-skill/install.sh | bash</code></pre>
+
+<div class="box">
+  装完重启 <a href="https://claude.com/claude-code" target="_blank">Claude Code</a>，然后跟它说：<br>
+  <code>「写个策略，选市值最小的 3 只，每 5 天调仓」</code><br>
+  Claude 会自动生成完整聚宽策略代码。
+</div>
+
+<h3>📦 手动下载</h3>
+<p>
+  <a class="btn" href="https://github.com/perfectuser21/jq-strategy-skill/archive/refs/heads/main.tar.gz">⬇ 下载 tar.gz</a>
+  <a class="btn sec" href="https://github.com/perfectuser21/jq-strategy-skill/archive/refs/heads/main.zip">⬇ 下载 zip</a>
+</p>
+<p>解压后整个目录放到 <code>~/.claude/skills/jq-strategy/</code> 即可。</p>
+
+<h3>🎯 支持的策略类型</h3>
+<ul>
+  <li><b>选股轮动</b> —— 小市值、低估值、高 ROE、红利</li>
+  <li><b>技术择时</b> —— 均线金叉、MACD、RSI</li>
+  <li><b>多因子打分</b> —— 多指标综合排名</li>
+  <li><b>ETF 轮动</b> —— 动量切换、股债平衡</li>
+</ul>
+
+<h3>📋 触发方式（三种都行）</h3>
+<pre><code>写个策略，选市值 20-30 亿，每 5 天换仓
+/jq-strategy 破净股 + ROE>15，月度调仓持 10 只
+帮我写个均线策略，510300 5 日线上穿 20 日线买入</code></pre>
+
+<h3>🔧 国内加速（可选）</h3>
+<p>如果 GitHub 访问慢，可以用镜像：</p>
+<pre><code>git clone https://mirror.ghproxy.com/https://github.com/perfectuser21/jq-strategy-skill.git ~/.claude/skills/jq-strategy</code></pre>
+
+<h3>📝 源码</h3>
+<p><a href="https://github.com/perfectuser21/jq-strategy-skill" target="_blank">github.com/perfectuser21/jq-strategy-skill</a> · MIT License</p>
+
+<div class="footer">
+  需要聚宽账号（免费注册即可回测） · 本 skill 只生成聚宽格式代码，需粘贴到 joinquant.com 运行
+</div>
+
+</body>
+</html>
